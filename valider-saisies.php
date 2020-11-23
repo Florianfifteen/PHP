@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 function Rien($chaine) {
   return $chaine;
@@ -114,7 +114,7 @@ if ($ok == 0) {
   $code_demandeur = intSession($session);
   $code_demandeur = ($code_demandeur == 1) ? 0 : $code_demandeur;
 
-  $lien = $cfgRepTravail. "menu.php3?session=" . $session . "&zlInt=" . $code_demandeur;
+  $lien = $cfgRepTravail. "menu.php?session=" . $session . "&zlInt=" . $code_demandeur;
   rediriger($lien);
   
 }

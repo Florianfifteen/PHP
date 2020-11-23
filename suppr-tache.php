@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 if ($btnSuppr == " Non ") {
 
@@ -31,7 +31,7 @@ if ($btnSuppr == " Non ") {
   $sql = "DELETE FROM tache WHERE numero=".$code;
   $resultat = mysql_db_query($cfgBase, $sql);
 
-  $lien = $cfgRepTravail . "menu.php3?session=" . $session . "&zlInt=" . $zlInt;
+  $lien = $cfgRepTravail . "menu.php?session=" . $session . "&zlInt=" . $zlInt;
   rediriger( $lien );
 
 }

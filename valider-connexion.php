@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 // Vérification du mot de passe
 // ----------------------------
@@ -52,7 +52,7 @@ if ( $ok == 0 ) {
 
     // Changement de mot de passe
 	// --------------------------
-    rediriger("saisie-new-pwd.php3?session=$new_sid");
+    rediriger("saisie-new-pwd.php?session=$new_sid");
 
   }
 }
