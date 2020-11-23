@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 // Si la session n'est pas valide on quitte
 // ----------------------------------------
@@ -47,14 +47,14 @@ function Afficher_Date(nom_champ) {
   }
 }
 </SCRIPT>
-<!-- -------------------------------------------------------------------------------------- JS - Fin -->
+<!-- ----------------------------------------- JS ---------------------------------->
 
 &nbsp;<IMG SRC='images/gauche.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF="javascript:history.go(-1)" CLASS='Liens'>Annuler</A>&nbsp;<BR>
 
 
 <?php
 
-echo "<FORM METHOD=POST ACTION='valider-saisies.php3?session=$session'>\n";
+echo "<FORM METHOD=POST ACTION='valider-saisies.php?session=$session'>\n";
 echo "<INPUT TYPE='hidden' NAME='type_maj' VALUE='tout'>";
 
 echo "<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=2>\n";
@@ -108,7 +108,7 @@ for ($cpt = 0; $cpt <= 9; $cpt++) {
 	case 2:
 	  echo "<SELECT NAME='zlInt' onChange='FocusObjet()'>";
 	  $listeLimitee = "vrai";
-	  include("liste-intervenants.php3");
+	  include("liste-intervenants.php");
 	  echo "</SELECT>";
 	  break;
 
@@ -128,7 +128,7 @@ for ($cpt = 0; $cpt <= 9; $cpt++) {
 
 	case 6:
 	  echo "<SELECT NAME='zlPriorites'>";
-	  include("liste-priorites.php3");
+	  include("liste-priorites.php");
 	  echo "</SELECT>";
 	  break;
 
