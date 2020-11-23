@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 // Si la session n'est pas valide on quitte
 // ----------------------------------------
@@ -10,17 +10,17 @@ entete("Gestion des Tâches", $session, "");
 
 ?>
 
-<!-- ------------------------------------------------------------------------------------ JS - Début -->
-<SCRIPT LANGUAGE="JavaScript">
+<!------------------JS---------------->
+<SCRIPT language="JavaScript">
 <!--
 function Cocher(valeur) { document.forms[0].coTaches[valeur].checked = true; }
 //-->
 </SCRIPT>
-<!-- -------------------------------------------------------------------------------------- JS - Fin -->
+<!------------------JS---------------->
 
 <?php
 
-echo "<TABLE BORDER='0' CELLSPACING='0' CELLPADDING='0'><TR><TD>\n";
+  echo "<TABLE BORDER='0' CELLSPACING='0' CELLPADDING='0'><TR><TD>\n";
 
   echo "<TABLE BGCOLOR='#FFFFFF' BORDER='0' CELLSPACING='0' CELLPADDING='1'><TR><TD>\n";
   echo "<TABLE BGCOLOR='#5A6BA5' BORDER='0' CELLSPACING='0' CELLPADDING='10'><TR><TD>\n";
@@ -47,22 +47,22 @@ echo "<TABLE BORDER='0' CELLSPACING='0' CELLPADDING='0'><TR><TD>\n";
   echo "<TR><TD HEIGHT='40' VALIGN='center'>\n";
 
   echo "&nbsp;<SELECT NAME='zlInt' SIZE='1'>\n";
-  include("liste-intervenants.php3");
+  include("liste-intervenants.php");
   echo "</SELECT>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE='submit' VALUE=' Ok '>&nbsp;\n";
 
 
   echo "</TD></TR></TABLE>\n";
   echo "</TD></TR></TABLE>\n";
 
-echo "</TD><TD VALIGN='middle'>\n";
+  echo "</TD><TD VALIGN='middle'>\n";
 
-  echo "&nbsp;&nbsp;&nbsp;<IMG SRC='images/droite.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF='nouv-tache.php3?session=$session' CLASS='Liens'>Nouvelle Tâche</A>&nbsp;<BR><BR>\n";
-  echo "&nbsp;&nbsp;&nbsp;<IMG SRC='images/droite.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF='index.php3?session=$session' CLASS='Liens'>Se déconnecter</A>&nbsp;<BR><BR>\n";
+  echo "&nbsp;&nbsp;&nbsp;<IMG SRC='images/droite.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF='nouv-tache.php?session=$session' CLASS='Liens'>Nouvelle Tâche</A>&nbsp;<BR><BR>\n";
+  echo "&nbsp;&nbsp;&nbsp;<IMG SRC='images/droite.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF='index.php?session=$session' CLASS='Liens'>Se déconnecter</A>&nbsp;<BR><BR>\n";
   
-echo "</TD></TR></TABLE>\n";
+  echo "</TD></TR></TABLE>\n";
 
-include("liste-taches.php3");
+  include("liste-taches.php");
 
-echo "</BODY></HTML>";
+  echo "</BODY></HTML>";
 
 ?>
