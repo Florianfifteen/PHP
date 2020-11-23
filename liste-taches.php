@@ -1,6 +1,6 @@
 <?php
 
-require("conf/config.inc.php3");
+require("conf/config.inc.php");
 
 // Plage
 // -----
@@ -21,7 +21,7 @@ if (!isset($zlInt)) {
   if (isset($session)) {
     
 	$code_demandeur = intSession($session);
-	if ($code_demandeur == 1) // Big Brother (Resp. du Service), on affiche toutes les tâches
+	if ($code_demandeur == 1) // on affiche toutes les tâches
       $critInt = "";
 	else
       $critInt = " AND (tache.intervenant = $code_demandeur OR tache.demandeur = $code_demandeur)";
@@ -57,7 +57,7 @@ else {
   
   while ($tache = mysql_fetch_array($resultat)) {
 
-	$lienModif = "modif-tache.php3?code=$tache[0]&session=$session";
+	$lienModif = "modif-tache.php?code=$tache[0]&session=$session";
 	
 	if ($tache[5] == "N") {
 	  $coche = "&nbsp;";
@@ -76,7 +76,7 @@ else {
 	$resultat2 = mysql_db_query($cfgBase, $sql);
 	$demandeur = mysql_fetch_array($resultat2);
 
-    echo "<TD>&nbsp;$demandeur[0]&nbsp;</TD>";											  // Demandeur
+    echo "<TD>&nbsp;$demandeur[0]&nbsp;</TD>";											 // Demandeur
     echo "<TD>&nbsp;$tache[11]&nbsp;</TD>";												  // Intervenant
 	// Objet
 	echo "<TD>&nbsp;<A HREF='$lienModif' CLASS='objet'>".htmlspecialchars($tache[9])."</A>&nbsp;</TD>";
