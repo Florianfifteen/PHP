@@ -1,6 +1,6 @@
 <?php
 
-require("fonctions.inc.php3");
+require("fonctions.inc.php");
 
 // Si la session n'est pas valide on quitte
 // ----------------------------------------
@@ -10,7 +10,7 @@ entete("Gestion des Tâches", $session, "", "white");
 
 ?>
 
-<!-- ------------------------------------------------------------------------------------ JS - Début -->
+<!-- ------------------------------------------ JS ------------------------------------->
 <SCRIPT LANGUAGE="JavaScript">
 
 function Afficher_Date(nom_champ) {
@@ -45,14 +45,14 @@ function Afficher_Date(nom_champ) {
 }
 
 </SCRIPT>
-<!-- -------------------------------------------------------------------------------------- JS - Fin -->
+<!-- ---------------------------------- JS ---------------------------------->
 
 &nbsp;<IMG SRC='images/gauche.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF="javascript:history.go(-1)" CLASS="Liens">Annuler</A>&nbsp;
 <BR><BR>
 
 <?php
 
-require("conf/config.inc.php3");
+require("conf/config.inc.php");
 
 $nomChamps = array( 
   "Demandeur",
@@ -95,7 +95,7 @@ if ($code_connecte == $code_demandeur) {
 }
 
 if ($droits1 == "") {
-  echo "<FORM METHOD=POST ACTION='valider-suppr.php3?session=$session'>\n";
+  echo "<FORM METHOD=POST ACTION='valider-suppr.php?session=$session'>\n";
   echo "<INPUT TYPE='hidden' NAME='code' VALUE='$code'>\n";
   echo "<INPUT TYPE='submit' VALUE='Supprimer cette tâche'>\n";
   echo "</FORM>\n";
@@ -104,7 +104,7 @@ if ($droits1 == "") {
 if ($droits1 == " DISABLED" && $droits2 == " DISABLED")
   echo "<FORM>\n";
 else
-  echo "<FORM METHOD=POST ACTION='valider-saisies.php3?session=$session' NAME='frmSaisie'>\n";
+  echo "<FORM METHOD=POST ACTION='valider-saisies.php?session=$session' NAME='frmSaisie'>\n";
 
 if ($droits1 == "")
   echo "<INPUT TYPE='hidden' NAME='type_maj' VALUE='tout'>";
@@ -154,7 +154,7 @@ for ($cpt = 0; $cpt <= 9; $cpt++) {
   	  echo "<SELECT NAME='zlInt' $droits1>";
 	  $listeLimitee = "vrai";
 	  $zlInt = $tache[6];
-	  include("liste-intervenants.php3");
+	  include("liste-intervenants.php");
 	  echo "</SELECT>";
 	  break;
 
@@ -177,7 +177,7 @@ for ($cpt = 0; $cpt <= 9; $cpt++) {
 	case 6:
 	  echo "<SELECT NAME='zlPriorites' $droits1>";
 	  $zlPriorites = $tache[8];
-	  include("liste-priorites.php3");
+	  include("liste-priorites.php");
 	  echo "</SELECT>";
 	  break;
 
