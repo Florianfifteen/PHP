@@ -4,7 +4,7 @@ require("fonctions.inc.php");
 
 if (isset($session)) {
 
-  // Il s'agit d'une déconnexion, on supprime le sid
+  // Il s'agit d'une dÃ©connexion, on supprime le sid
   // -----------------------------------------------
 
   mysql_connect($cfgHote, $cfgMajUsr, $cfgMajPwd);
@@ -13,7 +13,7 @@ if (isset($session)) {
 
 }
 
-entete("Gestion des Tâches", "", "focusPassword()");
+entete("Gestion des TÃ¢ches", "", "focusPassword()");
 
 ?>
 
@@ -66,7 +66,7 @@ echo "&nbsp;&nbsp;&nbsp;<SELECT NAME='zlInt' SIZE='1'>\n";
 // --------------------------------------
 $listeLimitee = 1;
 
-// On récupère le cookie : code utilisateur
+// On rÃ©cupÃ¨re le cookie : code utilisateur
 if (isset($ckUtilisateur)) $zlInt = $ckUtilisateur;
 
 include("liste-intervenants.php");
@@ -88,8 +88,3 @@ echo "</TD></TR></TABLE>\n";
 echo "&nbsp;&nbsp;<IMG SRC='images/droite.gif' ALIGN='absmiddle' BORDER='0'>&nbsp;<A HREF='javascript:Connexion(2)' CLASS='Liens'>Changer de mot de passe</A>\n";
 
 ?>
-
-</FORM>
-
-</BODY>
-</HTML>
